@@ -203,9 +203,8 @@ function envoyerWhatsApp() {
     txt += `• *Fonds Engagés :* ${dataClient.montant.toLocaleString()}${sym}\n`;
     txt += `• *Marge :* + ${dataClient.profit.toLocaleString()}${sym}\n`;
 
-    // Utilisation de l'API standard de WhatsApp (wa.me) avec la bonne syntaxe URL
-    const url = `https://wa.me{+237641655717}?text=${encodeURIComponent(txt)}`;
+    // CORRECTION APPLIQUÉE : Syntaxe ${variable} et ajout du slash /
+    const url = `https://wa.me{numeroAdmin}?text=${encodeURIComponent(txt)}`;
     
     window.open(url, '_blank');
 }
-
