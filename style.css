@@ -1,10 +1,12 @@
-/* --- CONFIGURATION DES COULEURS ET DESIGN MOBILE --- */
+/* --- CONFIGURATION DES COULEURS ET DESIGN PRO MOBILE --- */
 :root {
     --rose: #ff477e;
+    --rose-sombre: #d6336c;
     --noir: #0a0a0a;
     --carte: #161616;
     --blanc: #ffffff;
     --gris: #a0a0a0;
+    --vert-momo: #25d366;
 }
 
 * {
@@ -23,14 +25,27 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 /* --- ÉCRAN D'ACCUEIL --- */
 .accueil {
     text-align: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
+    padding: 10px 0;
+}
+
+.badge-securite {
+    display: inline-block;
+    background-color: rgba(37, 211, 102, 0.1);
+    color: var(--vert-momo);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(37, 211, 102, 0.2);
 }
 
 .accueil h1 {
@@ -38,6 +53,7 @@ body {
     font-weight: 800;
     margin-bottom: 10px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .accueil h1 span {
@@ -48,22 +64,23 @@ body {
 .accueil p {
     font-size: 0.95rem;
     color: var(--gris);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     line-height: 1.5;
 }
 
 .zone-boutons {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     width: 100%;
+    margin-bottom: 35px;
 }
 
 /* --- BOUTONS --- */
 .btn {
     width: 100%;
     padding: 16px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: bold;
     border-radius: 12px;
     cursor: pointer;
@@ -79,7 +96,7 @@ body {
 .btn-investir {
     background-color: var(--rose);
     color: var(--blanc);
-    box-shadow: 0 4px 12px rgba(255, 71, 126, 0.3);
+    box-shadow: 0 4px 14px rgba(255, 71, 126, 0.3);
 }
 
 .btn-contact {
@@ -88,7 +105,74 @@ body {
     border: 2px solid var(--blanc);
 }
 
-/* --- FENÊTRES MODALES (POPUPS) --- */
+/* --- FLUX DE TÉMOIGNAGES EN DIRECT --- */
+.section-temoignages {
+    text-align: left;
+    margin-top: 15px;
+    background-color: var(--carte);
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid #222;
+}
+
+.section-temoignages h3 {
+    font-size: 0.9rem;
+    color: var(--blanc);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.flux-temoignages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 230px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Barre de défilement discrète */
+.flux-temoignages::-webkit-scrollbar {
+    width: 4px;
+}
+.flux-temoignages::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+.carte-temoignage {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 3px solid var(--vert-momo);
+}
+
+.badge-statut {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--vert-momo);
+    margin-bottom: 4px;
+}
+
+.texte-temoignage {
+    font-size: 0.8rem;
+    color: var(--blanc);
+    line-height: 1.3;
+    margin-bottom: 4px;
+    font-style: italic;
+}
+
+.auteur-temoignage {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--gris);
+    text-align: right;
+    font-weight: 500;
+}
+
+/* --- FENÊTRES PLEIN ÉCRAN (MODALS) --- */
 .modal {
     display: none; 
     position: fixed;
@@ -99,7 +183,7 @@ body {
     background-color: var(--noir);
     z-index: 1000;
     overflow-y: auto;
-    padding: 20px 15px;
+    padding: 15px;
 }
 
 .modal-contenu {
@@ -110,6 +194,7 @@ body {
     border-radius: 16px;
     padding: 20px;
     position: relative;
+    border: 1px solid #252525;
 }
 
 .fermer-modal {
@@ -156,11 +241,10 @@ body {
     outline: none;
 }
 
-/* --- BOUTONS CHOIX DEVISE --- */
 .devise-container {
     display: flex;
     gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .devise-option {
@@ -172,6 +256,7 @@ body {
     cursor: pointer;
     background-color: #222;
     font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .devise-option.active {
@@ -180,9 +265,9 @@ body {
     color: var(--rose);
 }
 
-/* --- ZONE AFFICHAGE GAINS --- */
+/* --- AFFICHAGE RENDEMENT --- */
 .case-profit {
-    background-color: rgba(255, 71, 126, 0.08);
+    background-color: rgba(255, 71, 126, 0.06);
     border: 1px dashed var(--rose);
     padding: 12px;
     border-radius: 8px;
@@ -190,21 +275,19 @@ body {
     text-align: center;
 }
 
+.case-profit p {
+    font-size: 0.8rem;
+    color: var(--gris);
+    margin-bottom: 2px;
+}
+
 .case-profit span {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--rose);
 }
 
-.erreur-msg {
-    color: #ff4747;
-    font-size: 0.8rem;
-    margin-top: 5px;
-    font-weight: bold;
-    display: none;
-}
-
-/* --- FICHE DE RÉCAPITULATIF --- */
+/* --- FICHE RÉCAPITULATIF --- */
 .recap-item {
     display: flex;
     justify-content: space-between;
@@ -214,15 +297,36 @@ body {
 }
 
 .recap-item .label { color: var(--gris); }
-.recap-item .valeur { font-weight: 600; }
+.recap-item .valeur { font-weight: 600; text-align: right; }
 
 .btn-whatsapp {
-    background-color: #25D366;
+    background-color: var(--vert-momo);
     color: white;
     margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
 }
 
-/* --- BLOCS LOGICIELS ET ENCADRÉS --- */
+/* --- EXPLICATIONS & AVANTAGES --- */
+.bloc-avantage {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #222;
+}
+
+.bloc-avantage ul {
+    margin-top: 8px;
+    padding-left: 18px;
+}
+
+.bloc-avantage li {
+    font-size: 0.85rem;
+    color: #dfdfdf;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
 .info-systeme {
     margin-top: 12px;
     background: #1c1c1c;
@@ -234,10 +338,19 @@ body {
 .info-systeme h4 {
     color: var(--rose);
     margin-bottom: 4px;
+    font-size: 0.9rem;
 }
 
 .info-systeme p {
     font-size: 0.85rem;
     line-height: 1.4;
     color: var(--gris);
+}
+
+.erreur-msg {
+    color: #ff4747;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-weight: bold;
+    display: none;
 }
