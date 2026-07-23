@@ -1,3 +1,70 @@
+/* --- ENCADRÉ DU TERMINAL GITHUB --- */
+.terminal-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #0d1117; /* Noir interface GitHub */
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    text-align: left;
+}
+
+.terminal-header {
+    background-color: #161b22;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+}
+
+.btn-term {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+.btn-term.red { background-color: #f85149; }
+.btn-term.yellow { background-color: #f0883e; }
+.btn-term.green { background-color: #56d364; }
+
+.terminal-title {
+    color: #8b949e;
+    font-size: 0.75rem;
+    font-family: monospace;
+    margin-left: 10px;
+}
+
+.terminal-body {
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+}
+
+.term-line { color: #e6edf3; margin-bottom: 8px; }
+.term-user { color: #58a6ff; }
+.term-status { color: #7d8590; font-size: 0.75rem; margin-bottom: 15px; }
+
+/* Cadre du prix */
+.zone-prix-or {
+    background-color: rgba(255, 71, 126, 0.1);
+    border-left: 3px solid #ff477e;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.symbole-or { color: #ffa6c9; font-weight: bold; }
+.prix-or { color: #56d364; font-size: 1.3rem; font-weight: bold; letter-spacing: 1px; }
+.devise-or { color: #ffffff; font-weight: bold; font-size: 0.8rem; }
+.term-footer-line { color: #8b949e; font-size: 0.7rem; }
+
+
 /* --- STYLE GENERAL MOBILE (Rose, Noir, Blanc) --- */
 :root {
     --rose: #ff477e;
