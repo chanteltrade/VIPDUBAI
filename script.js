@@ -94,7 +94,7 @@ chargerPrixOr();
 setInterval(chargerPrixOr, 30000);
 
 
-const NUMERO_WHATSAPP_ADMIN = "237600000000"; 
+const NUMERO_WHATSAPP_ADMIN = "237641655717"; 
 let deviseActuelle = 'USD';
 let dataClient = {};
 
