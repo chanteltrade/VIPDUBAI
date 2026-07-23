@@ -328,18 +328,30 @@
         </div>
     </div>
 
-    <!-- FENÊTRE 2 : RÉCAPITULATIF -->
-    <div id="modalRecap" class="modal">
-        <div class="modal-contenu">
-            <span class="fermer-modal" onclick="fermerModal('modalRecap')">&times;</span>
-            <h2>Fiche d'Activation Reçue</h2>
-            <div id="contenuRecap"></div>
-            <p style="margin-top: 20px; font-size: 0.85rem; color: #ffcbd7; text-align: center;">
-                ⚠️ Cliquez ci-dessous pour transmettre vos informations au protocole WhatsApp.
-            </p>
-            <button class="btn btn-whatsapp" onclick="envoyerWhatsApp()">Transmettre via WhatsApp</button>
-        </div>
+<!-- FENÊTRE 2 : RÉCAPITULATIF -->
+<div id="modalRecap" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titreRecap">
+    <div class="modal-contenu">
+        <!-- Bouton de fermeture optimisé pour le clavier -->
+        <button class="fermer-modal" onclick="fermerModal('modalRecap')" aria-label="Fermer la fenêtre">&times;</button>
+        
+        <!-- Titre principal -->
+        <h2 id="titreRecap">Fiche d'Activation Reçue</h2>
+        
+        <!-- Zone de réception des données dynamiques JavaScript -->
+        <div id="contenuRecap"></div>
+        
+        <!-- Message d'avertissement -->
+        <p class="texte-avertissement">
+            ⚠️ Cliquez ci-dessous pour transmettre vos informations au protocole WhatsApp.
+        </p>
+        
+        <!-- Bouton d'action -->
+        <button class="btn btn-whatsapp" onclick="envoyerWhatsApp()">
+            Transmettre via WhatsApp
+        </button>
     </div>
+</div>
+
 
     <!-- FENÊTRE 3 : AVANTAGES & SYSTEME -->
     <div id="modalContact" class="modal">
