@@ -3,51 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Chantel White Trade | Plateforme d'Investissement Algorithmique</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Chantel White Trade | Plateforme d'Investissement</title>
+    <style>
+        /* --- STYLE GENERAL MOBILE (Rose, Noir, Blanc) --- */
+        :root {
+            --rose: #ff477e;
+            --noir: #0a0a0a;
+            --carte: #161616;
+            --blanc: #ffffff;
+            --gris: #a0a0a0;
+            --vert: #25d366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--noir);
+            color: var(--blanc);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        /* --- ECRAN D'ACCUEIL --- */
+        .accueil {
+            text-align: center;
+            width: 100%;
+            max-width: 420px;
+            padding: 10px 0;
+        }
+
+        .badge-securite {
+            display: inline-block;
+            background-color: rgba(37, 211, 102, 0.1);
+            color: var(--vert);
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(37, 211, 102, 0.2);
+        }
+
+        .accueil h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .accueil h1 span {
+            color: var(--rose);
+            display: block;
+        }
+
+        .accueil p {
+            font-size: 0.95rem;
+            color: var(--gris);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .zone-boutons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            margin-bottom: 35px;
+        }
+
+        /* --- BOUTONS --- */
+        .btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-align: center;
+            border: none;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .btn-investir {
+            background-color: var(--rose);
+            color: var(--blanc);
+            box-shadow: 0 4px 14px rgba(255, 71, 126, 0.3);
+        }
+
+        .btn-contact {
+            background-color: transparent;
+            color: var(--blanc);
+            border: 2px solid var(--blanc);
+        }
+
+        /* --- TEMOIGNAGES --- */
+        .section-temoignages {
+            text-align: left;
+            margin-top: 15px;
+            background-color: var(--carte);
+            padding: 15px;
+            border-radius: 14px;
+            border: 1px solid #222;
+        }
+
+        .section-temoignages h3 {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .flux-temoignages {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 230px;
+            overflow-y: auto;
+        }
+
+        .carte-temoignage {
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 3px solid var(--vert);
+        }
+
+        .badge-statut {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: var(--vert);
+            margin-bottom: 4px;
+        }
+
+        .texte-temoignage {
+            font-size: 0.8rem;
+            line-height: 1.3;
+            margin-bottom: 4px;
+            font-style: italic;
+        }
+
+        .auteur-temoignage {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--gris);
+            text-align: right;
+        }
+
+        /* --- MODALS (FENETRES) --- */
+        .modal {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--noir);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .modal-contenu {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            background-color: var(--carte);
+            border-radius: 16px;
+            padding: 20px;
+            position: relative;
+            border: 1px solid #252525;
+        }
+
+        .fermer-modal {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 2rem;
+            color: var(--gris);
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .modal h2 {
+            color: var(--rose);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* --- FORMULAIRE --- */
+        .groupe-form {
+            margin-bottom: 15px;
+        }
+
+        .groupe-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: var(--gris);
+        }
+
+        .groupe-form input, .groupe-form select {
+            width: 100%;
+            padding: 12px;
+            background-color: #222;
+            border: 1px solid #333;
+            color: var(--blanc);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .devise-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .devise-option {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #222;
+            font-weight: bold;
+        }
+
+        .devise-option.active {
+            border-color: var(--rose);
+            background-color: rgba(255, 71, 126, 0.15);
+            color: var(--rose);
+        }
+
+        .case-profit {
+            background-color: rgba(255, 71, 126, 0.06);
+            border: 1px dashed var(--rose);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .case-profit span {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--rose);
+        }
+
+        .recap-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #252525;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .recap-item .label { color: var(--gris); }
+        .recap-item .valeur { font-weight: 600; }
+
+        .btn-whatsapp {
+            background-color: var(--vert);
+            color: white;
+            margin-top: 20px;
+        }
+
+        .bloc-avantage {
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .bloc-avantage ul { padding-left: 18px; margin-top: 8px;}
+
+        .info-systeme {
+            margin-top: 12px;
+            background: #1c1c1c;
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 3px solid var(--rose);
+        }
+
+        .info-systeme h4 { color: var(--rose); margin-bottom: 4px; }
+        .info-systeme p { font-size: 0.85rem; color: var(--gris); }
+        .erreur-msg { color: #ff4747; font-size: 0.8rem; margin-top: 5px; font-weight: bold; display: none; }
+    </style>
 </head>
 <body>
 
-    <!-- ÉCRAN D'ACCUEIL PROFESSIONNEL -->
+    <!-- ÉCRAN D'ACCUEIL -->
     <div class="accueil">
         <div class="badge-securite">🔒 Serveur Sécurisé SSL v3</div>
         <h1>Chantel <span>White Trade</span></h1>
-        <p>Propulsez votre capital grâce à l'élite de la technologie financière. Une infrastructure de trading automatisée, transparente et accessible à tous.</p>
+        <p>Propulsez votre capital grâce à l'élite de la technologie financière algorithmique.</p>
         
         <div class="zone-boutons">
             <button class="btn btn-investir" onclick="ouvrirModal('modalInvestir')">Investir Maintenant</button>
             <button class="btn btn-contact" onclick="ouvrirModal('modalContact')">Notre Système & Avantages</button>
         </div>
 
-        <!-- SECTION TEMOIGNAGES ET RECEPTIONS EN DIRECT -->
         <div class="section-temoignages">
-            <h3>📈 Récentes Réceptions de Gains (Direct)</h3>
+            <h3>📈 Récentes Réceptions de Gains</h3>
             <div class="flux-temoignages">
                 <div class="carte-temoignage">
                     <span class="badge-statut">✅ Succès (Momo)</span>
-                    <p class="texte-temoignage">"Dépôt validé le matin, gain reçu sur mon MTN Play en soirée sans protocole. Merci Chantel White Trade."</p>
+                    <p class="texte-temoignage">"Dépôt validé le matin, gain reçu sur mon MTN Play en soirée sans protocole."</p>
                     <span class="auteur-temoignage">Siewe M. — 🇨🇲 Cameroun</span>
                 </div>
                 <div class="carte-temoignage">
                     <span class="badge-statut">✅ Succès (Wave)</span>
-                    <p class="texte-temoignage">"Le système pro est incroyable. J'ai commencé avec le minimum en FCFA et les retours sont réguliers."</p>
+                    <p class="texte-temoignage">"Le système pro est incroyable. J'ai commencé avec le minimum en FCFA."</p>
                     <span class="auteur-temoignage">Kouadio A. — 🇨🇮 Côte d'Ivoire</span>
-                </div>
-                <div class="carte-temoignage">
-                    <span class="badge-statut">✅ Succès (Orange Money)</span>
-                    <p class="texte-temoignage">"Au début j'hésitais, mais la gestion automatisée HFT supprime le stress. Très bon support client."</p>
-                    <span class="auteur-temoignage">Diop S. — 🇸🇳 Sénégal</span>
-                </div>
-                <div class="carte-temoignage">
-                    <span class="badge-statut">✅ Succès (Moov)</span>
-                    <p class="texte-temoignage">"Algorithme très précis. Les fonds sont sécurisés et le retrait sur mon compte s'est fait en quelques minutes."</p>
-                    <span class="auteur-temoignage">Ouedraogo I. — 🇧🇫 Burkina Faso</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- FENÊTRE 1 : FORMULAIRE D'INVESTISSEMENT INTELLIGENT -->
+    <!-- FENÊTRE 1 : FORMULAIRE -->
     <div id="modalInvestir" class="modal">
         <div class="modal-contenu">
             <span class="fermer-modal" onclick="fermerModal('modalInvestir')">&times;</span>
@@ -56,112 +343,5 @@
             <form onsubmit="validerFormulaire(event)">
                 <div class="groupe-form">
                     <label>Nom complet</label>
-                    <input type="text" id="nom" required placeholder="Votre nom de famille">
+                    <input type="text" id="nom" required placeholder="Votre nom">
                 </div>
-                <div class="groupe-form">
-                    <label>Prénom</label>
-                    <input type="text" id="prenom" required placeholder="Votre prénom">
-                </div>
-                <div class="groupe-form">
-                    <label>Pays de Résidence</label>
-                    <select id="pays" onchange="changerIndicatif()" required>
-                        <option value="">Sélectionnez le pays</option>
-                        <option value="CM" data-code="+237">Cameroun (+237)</option>
-                        <option value="CI" data-code="+225">Côte d'Ivoire (+225)</option>
-                        <option value="SN" data-code="+221">Sénégal (+221)</option>
-                        <option value="GA" data-code="+241">Gabon (+241)</option>
-                        <option value="BF" data-code="+226">Burkina Faso (+226)</option>
-                        <option value="ML" data-code="+223">Mali (+223)</option>
-                        <option value="TG" data-code="+228">Togo (+228)</option>
-                        <option value="BJ" data-code="+229">Bénin (+229)</option>
-                        <option value="CG" data-code="+242">Congo-Brazzaville (+242)</option>
-                        <option value="CD" data-code="+243">RDC (+243)</option>
-                        <option value="NE" data-code="+227">Niger (+227)</option>
-                        <option value="TD" data-code="+235">Tchad (+235)</option>
-                        <option value="CF" data-code="+236">RCA (+236)</option>
-                        <option value="GN" data-code="+224">Guinée (+224)</option>
-                        <option value="FR" data-code="+33">France (+33)</option>
-                    </select>
-                </div>
-                <div class="groupe-form">
-                    <label>Votre Numéro de Téléphone (WhatsApp de préférence)</label>
-                    <input type="tel" id="telephone" required placeholder="Votre numéro complet">
-                </div>
-                <div class="groupe-form">
-                    <label>Nom Officiel du Compte Bénéficiaire</label>
-                    <input type="text" id="nomBeneficiaire" required placeholder="Nom exact associé au compte de réception">
-                </div>
-                <div class="groupe-form">
-                    <label>Numéro de Téléphone du Bénéficiaire (Pour recevoir vos gains)</label>
-                    <input type="tel" id="telBeneficiaire" required placeholder="Ex: numéro Momo, OM ou Wave">
-                </div>
-
-                <div class="groupe-form">
-                    <label style="font-size:0.85rem; color:var(--gris); display:block; margin-bottom:5px;">Devise Préférée d'Investissement</label>
-                    <div class="devise-container">
-                        <div id="btnUSD" class="devise-option active" onclick="selectionnerDevise('USD')">DOLLAR ($)</div>
-                        <div id="btnXAF" class="devise-option" onclick="selectionnerDevise('XAF')">FCFA</div>
-                    </div>
-                </div>
-
-                <div class="groupe-form">
-                    <label>Montant Initial à Engager</label>
-                    <input type="number" id="montant" oninput="calculerProfit()" required placeholder="Entrez le montant">
-                    <div id="erreurMontant" class="erreur-msg"></div>
-                </div>
-
-                <div class="case-profit">
-                    <p>Performance Globale Estimée du Marché :</p>
-                    <span id="profitAffichage">Calcul en cours...</span> <span id="deviseProfit" style="color:var(--rose); font-weight:800;">$</span>
-                </div>
-
-                <button type="submit" class="btn btn-investir">Générer la clé d'investissement</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- FENÊTRE 2 : CONFIGURATION DU RÉCAPITULATIF SÉCURISÉ -->
-    <div id="modalRecap" class="modal">
-        <div class="modal-contenu">
-            <span class="fermer-modal" onclick="fermerModal('modalRecap')">&times;</span>
-            <h2>Fiche d'Activation Reçue</h2>
-            
-            <div id="contenuRecap"></div>
-
-            <p style="margin-top: 20px; font-size: 0.85rem; color: #ffcbd7; text-align: center; line-height: 1.4;">
-                ⚠️ <strong>Mesure d'authentification :</strong> Vos données de transactions doivent être enregistrées manuellement par la cellule technique. Cliquez ci-dessous pour ouvrir votre session WhatsApp sécurisée.
-            </p>
-
-            <button class="btn btn-whatsapp" onclick="envoyerWhatsApp()">
-                Transmettre au protocole WhatsApp
-            </button>
-        </div>
-    </div>
-
-    <!-- FENÊTRE 3 : FONCTIONNEMENT SYSTÈME & AVANTAGES EXCLUSIFS -->
-    <div id="modalContact" class="modal">
-        <div class="modal-contenu">
-            <span class="fermer-modal" onclick="fermerModal('modalContact')">&times;</span>
-            <h2>Infrastructures & Avantages Clients</h2>
-            
-            <p style="font-size: 0.9rem; color: var(--gris); line-height: 1.5; margin-bottom: 20px;">
-                <strong>Chantel White Trade</strong> redéfinit la gestion d'actifs numériques en éliminant les contraintes émotionnelles du trading manuel grâce à des protocoles de scalping automatisés.
-            </p>
-
-            <div class="bloc-avantage">
-                🏆 <strong>Nos Avantages Majeurs :</strong>
-                <ul>
-                    <li>Garantie intégrale du capital de base déposé.</li>
-                    <li>Passerelles directes avec les opérateurs locaux (Momo, Wave, Orange Money).</li>
-                    <li>Aucune connaissance technique requise : tout est automatisé.</li>
-                    <li>Support technique actif 24h/7j pour la communauté d'Afrique Francophone.</li>
-                </ul>
-            </div>
-
-            <div class="info-systeme">
-                <h4>📊 Algorithme Basique (Niveau 1)</h4>
-                <p>Le système injecte les liquidités clients dans un protocole d'arbitrage de masse. Dès qu'une micro-différence de prix apparaît entre deux places boursières mondiales, le logiciel exécute l'achat et la revente automatique pour capter le bénéfice.</p>
-            </div>
-
-            <div class="info-systeme">
-                <h4>⚡ Algorithme Professionnel (Niveau HFT)</h4>
