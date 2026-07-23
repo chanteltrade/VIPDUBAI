@@ -204,7 +204,7 @@ function envoyerWhatsApp() {
     txt += `• *Marge :* + ${dataClient.profit.toLocaleString()}${sym}\n`;
 
     // CORRECTION APPLIQUÉE : Syntaxe ${variable} et ajout du slash /
-    const url = `https://wa.me{numeroAdmin}?text=${encodeURIComponent(txt)}`;
+    const url = `https://wa.me{+237641655717}?text=${encodeURIComponent(txt)}`;
     
     window.open(url, '_blank');
 }
