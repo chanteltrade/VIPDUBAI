@@ -3,63 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Chantel White Trade</title>
+    <title>Chantel White Trade | Plateforme d'Investissement Algorithmique</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ÉCRAN D'ACCUEIL MOBILE -->
+    <!-- ÉCRAN D'ACCUEIL PROFESSIONNEL -->
     <div class="accueil">
+        <div class="badge-securite">🔒 Serveur Sécurisé SSL v3</div>
         <h1>Chantel <span>White Trade</span></h1>
-        <p>Optimisez vos finances grâce à nos outils de trading algorithmique haute performance sécurisés.</p>
+        <p>Propulsez votre capital grâce à l'élite de la technologie financière. Une infrastructure de trading automatisée, transparente et accessible à tous.</p>
         
         <div class="zone-boutons">
             <button class="btn btn-investir" onclick="ouvrirModal('modalInvestir')">Investir Maintenant</button>
-            <button class="btn btn-contact" onclick="ouvrirModal('modalContact')">Nous Contacter</button>
+            <button class="btn btn-contact" onclick="ouvrirModal('modalContact')">Notre Système & Avantages</button>
+        </div>
+
+        <!-- SECTION TEMOIGNAGES ET RECEPTIONS EN DIRECT -->
+        <div class="section-temoignages">
+            <h3>📈 Récentes Réceptions de Gains (Direct)</h3>
+            <div class="flux-temoignages">
+                <div class="carte-temoignage">
+                    <span class="badge-statut">✅ Succès (Momo)</span>
+                    <p class="texte-temoignage">"Dépôt validé le matin, gain reçu sur mon MTN Play en soirée sans protocole. Merci Chantel White Trade."</p>
+                    <span class="auteur-temoignage">Siewe M. — 🇨🇲 Cameroun</span>
+                </div>
+                <div class="carte-temoignage">
+                    <span class="badge-statut">✅ Succès (Wave)</span>
+                    <p class="texte-temoignage">"Le système pro est incroyable. J'ai commencé avec le minimum en FCFA et les retours sont réguliers."</p>
+                    <span class="auteur-temoignage">Kouadio A. — 🇨🇮 Côte d'Ivoire</span>
+                </div>
+                <div class="carte-temoignage">
+                    <span class="badge-statut">✅ Succès (Orange Money)</span>
+                    <p class="texte-temoignage">"Au début j'hésitais, mais la gestion automatisée HFT supprime le stress. Très bon support client."</p>
+                    <span class="auteur-temoignage">Diop S. — 🇸🇳 Sénégal</span>
+                </div>
+                <div class="carte-temoignage">
+                    <span class="badge-statut">✅ Succès (Moov)</span>
+                    <p class="texte-temoignage">"Algorithme très précis. Les fonds sont sécurisés et le retrait sur mon compte s'est fait en quelques minutes."</p>
+                    <span class="auteur-temoignage">Ouedraogo I. — 🇧🇫 Burkina Faso</span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- FENÊTRE 1 : FORMULAIRE D'INVESTISSEMENT -->
+    <!-- FENÊTRE 1 : FORMULAIRE D'INVESTISSEMENT INTELLIGENT -->
     <div id="modalInvestir" class="modal">
         <div class="modal-contenu">
             <span class="fermer-modal" onclick="fermerModal('modalInvestir')">&times;</span>
-            <h2>Formulaire d'Investissement</h2>
+            <h2>Dossier d'Investissement</h2>
             
             <form onsubmit="validerFormulaire(event)">
                 <div class="groupe-form">
-                    <label>Nom</label>
-                    <input type="text" id="nom" required placeholder="Votre nom">
+                    <label>Nom complet</label>
+                    <input type="text" id="nom" required placeholder="Votre nom de famille">
                 </div>
                 <div class="groupe-form">
                     <label>Prénom</label>
                     <input type="text" id="prenom" required placeholder="Votre prénom">
                 </div>
                 <div class="groupe-form">
-                    <label>Pays</label>
+                    <label>Pays de Résidence</label>
                     <select id="pays" onchange="changerIndicatif()" required>
                         <option value="">Sélectionnez le pays</option>
                         <option value="CM" data-code="+237">Cameroun (+237)</option>
                         <option value="CI" data-code="+225">Côte d'Ivoire (+225)</option>
                         <option value="SN" data-code="+221">Sénégal (+221)</option>
                         <option value="GA" data-code="+241">Gabon (+241)</option>
+                        <option value="BF" data-code="+226">Burkina Faso (+226)</option>
+                        <option value="ML" data-code="+223">Mali (+223)</option>
+                        <option value="TG" data-code="+228">Togo (+228)</option>
+                        <option value="BJ" data-code="+229">Bénin (+229)</option>
+                        <option value="CG" data-code="+242">Congo-Brazzaville (+242)</option>
+                        <option value="CD" data-code="+243">RDC (+243)</option>
+                        <option value="NE" data-code="+227">Niger (+227)</option>
+                        <option value="TD" data-code="+235">Tchad (+235)</option>
+                        <option value="CF" data-code="+236">RCA (+236)</option>
+                        <option value="GN" data-code="+224">Guinée (+224)</option>
                         <option value="FR" data-code="+33">France (+33)</option>
                     </select>
                 </div>
                 <div class="groupe-form">
-                    <label>Votre Numéro de Téléphone</label>
-                    <input type="tel" id="telephone" required placeholder="Votre numéro">
+                    <label>Votre Numéro de Téléphone (WhatsApp de préférence)</label>
+                    <input type="tel" id="telephone" required placeholder="Votre numéro complet">
                 </div>
                 <div class="groupe-form">
-                    <label>Nom du Compte Bénéficiaire</label>
-                    <input type="text" id="nomBeneficiaire" required placeholder="Nom du compte (Momo/Om)">
+                    <label>Nom Officiel du Compte Bénéficiaire</label>
+                    <input type="text" id="nomBeneficiaire" required placeholder="Nom exact associé au compte de réception">
                 </div>
                 <div class="groupe-form">
-                    <label>Numéro de Téléphone du Bénéficiaire</label>
-                    <input type="tel" id="telBeneficiaire" required placeholder="Numéro qui reçoit les gains">
+                    <label>Numéro de Téléphone du Bénéficiaire (Pour recevoir vos gains)</label>
+                    <input type="tel" id="telBeneficiaire" required placeholder="Ex: numéro Momo, OM ou Wave">
                 </div>
 
                 <div class="groupe-form">
-                    <label style="font-size:0.85rem; color:var(--gris); display:block; margin-bottom:5px;">Devise d'investissement</label>
+                    <label style="font-size:0.85rem; color:var(--gris); display:block; margin-bottom:5px;">Devise Préférée d'Investissement</label>
                     <div class="devise-container">
                         <div id="btnUSD" class="devise-option active" onclick="selectionnerDevise('USD')">DOLLAR ($)</div>
                         <div id="btnXAF" class="devise-option" onclick="selectionnerDevise('XAF')">FCFA</div>
@@ -67,61 +105,63 @@
                 </div>
 
                 <div class="groupe-form">
-                    <label>Montant à Investir</label>
-                    <input type="number" id="montant" oninput="calculerProfit()" required placeholder="Entrez la somme">
+                    <label>Montant Initial à Engager</label>
+                    <input type="number" id="montant" oninput="calculerProfit()" required placeholder="Entrez le montant">
                     <div id="erreurMontant" class="erreur-msg"></div>
                 </div>
 
                 <div class="case-profit">
-                    <p>Votre Profit Estimé (Gain x9) :</p>
-                    <span id="profitAffichage">0</span> <span id="deviseProfit" style="color:var(--rose); font-weight:800;">$</span>
+                    <p>Performance Globale Estimée du Marché :</p>
+                    <span id="profitAffichage">Calcul en cours...</span> <span id="deviseProfit" style="color:var(--rose); font-weight:800;">$</span>
                 </div>
 
-                <button type="submit" class="btn btn-investir">Valider l'investissement</button>
+                <button type="submit" class="btn btn-investir">Générer la clé d'investissement</button>
             </form>
         </div>
     </div>
 
-    <!-- FENÊTRE 2 : RÉCAPITULATIF FINALE -->
+    <!-- FENÊTRE 2 : CONFIGURATION DU RÉCAPITULATIF SÉCURISÉ -->
     <div id="modalRecap" class="modal">
         <div class="modal-contenu">
             <span class="fermer-modal" onclick="fermerModal('modalRecap')">&times;</span>
-            <h2>Récapitulatif de votre Dossier</h2>
+            <h2>Fiche d'Activation Reçue</h2>
             
             <div id="contenuRecap"></div>
 
-            <p style="margin-top: 15px; font-size: 0.85rem; color: #ffcbd7; text-align: center; line-height: 1.4;">
-                ⚠️ Cliquez ci-dessous pour envoyer vos informations à l'administrateur WhatsApp.
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #ffcbd7; text-align: center; line-height: 1.4;">
+                ⚠️ <strong>Mesure d'authentification :</strong> Vos données de transactions doivent être enregistrées manuellement par la cellule technique. Cliquez ci-dessous pour ouvrir votre session WhatsApp sécurisée.
             </p>
 
             <button class="btn btn-whatsapp" onclick="envoyerWhatsApp()">
-                Envoyer par WhatsApp
+                Transmettre au protocole WhatsApp
             </button>
         </div>
     </div>
 
-    <!-- FENÊTRE 3 : NOUS CONTACTER & ALGORITHMES -->
+    <!-- FENÊTRE 3 : FONCTIONNEMENT SYSTÈME & AVANTAGES EXCLUSIFS -->
     <div id="modalContact" class="modal">
         <div class="modal-contenu">
             <span class="fermer-modal" onclick="fermerModal('modalContact')">&times;</span>
-            <h2>À Propos de Notre Système</h2>
+            <h2>Infrastructures & Avantages Clients</h2>
             
-            <p style="font-size: 0.85rem; color: var(--gris); line-height: 1.4; margin-bottom: 15px;">
-                <strong>Chantel White Trade</strong> gère intelligemment des fonds d'actifs numériques via des infrastructures informatiques automatisées.
+            <p style="font-size: 0.9rem; color: var(--gris); line-height: 1.5; margin-bottom: 20px;">
+                <strong>Chantel White Trade</strong> redéfinit la gestion d'actifs numériques en éliminant les contraintes émotionnelles du trading manuel grâce à des protocoles de scalping automatisés.
             </p>
 
-            <div class="info-systeme">
-                <h4>🤖 Système Basique</h4>
-                <p>Vos fonds intègrent une réserve de liquidité globale. Notre algorithme effectue des arbitrages simples (acheter bas, revendre instantanément plus haut) sans aucun risque de perte de capital.</p>
+            <div class="bloc-avantage">
+                🏆 <strong>Nos Avantages Majeurs :</strong>
+                <ul>
+                    <li>Garantie intégrale du capital de base déposé.</li>
+                    <li>Passerelles directes avec les opérateurs locaux (Momo, Wave, Orange Money).</li>
+                    <li>Aucune connaissance technique requise : tout est automatisé.</li>
+                    <li>Support technique actif 24h/7j pour la communauté d'Afrique Francophone.</li>
+                </ul>
             </div>
 
             <div class="info-systeme">
-                <h4>⚡ Système Pro (Algorithmes)</h4>
-                <p>Nos scripts exploitent le Trading de Haute Fréquence (HFT). En se connectant directement aux API des plus grands marchés mondiaux, ils exécutent des centaines d'ordres par seconde basés sur l'étude des volumes instantanés.</p>
+                <h4>📊 Algorithme Basique (Niveau 1)</h4>
+                <p>Le système injecte les liquidités clients dans un protocole d'arbitrage de masse. Dès qu'une micro-différence de prix apparaît entre deux places boursières mondiales, le logiciel exécute l'achat et la revente automatique pour capter le bénéfice.</p>
             </div>
-        </div>
-    </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+            <div class="info-systeme">
+                <h4>⚡ Algorithme Professionnel (Niveau HFT)</h4>
