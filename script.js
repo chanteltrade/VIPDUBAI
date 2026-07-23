@@ -191,7 +191,7 @@ function envoyerWhatsApp() {
     const sym = dataClient.devise === 'USD' ? '$' : ' FCFA';
     
     // Numéro de l'administrateur (au format international, sans le signe +)
-    const numeroAdmin = "2376XXXXXXXX"; 
+    const numeroAdmin = "237641655717"; 
 
     // Construction du message textuel
     let txt = `*INVESTISSEMENT SECURISE — CHANTEL WHITE TRADE*\n\n`;
@@ -204,7 +204,7 @@ function envoyerWhatsApp() {
     txt += `• *Marge :* + ${dataClient.profit.toLocaleString()}${sym}\n`;
 
     // CORRECTION APPLIQUÉE : Syntaxe ${variable} et ajout du slash /
-    const url = `https://wa.me{+237641655717}?text=${encodeURIComponent(txt)}`;
+    const url = `https://wa.me{237641655717}?text=${encodeURIComponent(txt)}`;
     
     window.open(url, '_blank');
 }
