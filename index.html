@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chantel White Trade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- ÉCRAN D'ACCUEIL MOBILE -->
+    <div class="accueil">
+        <h1>Chantel <span>White Trade</span></h1>
+        <p>Optimisez vos finances grâce à nos outils de trading algorithmique haute performance sécurisés.</p>
+        
+        <div class="zone-boutons">
+            <button class="btn btn-investir" onclick="ouvrirModal('modalInvestir')">Investir Maintenant</button>
+            <button class="btn btn-contact" onclick="ouvrirModal('modalContact')">Nous Contacter</button>
+        </div>
+    </div>
+
+    <!-- FENÊTRE 1 : FORMULAIRE D'INVESTISSEMENT -->
+    <div id="modalInvestir" class="modal">
+        <div class="modal-contenu">
+            <span class="fermer-modal" onclick="fermerModal('modalInvestir')">&times;</span>
+            <h2>Formulaire d'Investissement</h2>
+            
+            <form onsubmit="validerFormulaire(event)">
+                <div class="groupe-form">
+                    <label>Nom</label>
+                    <input type="text" id="nom" required placeholder="Votre nom">
+                </div>
+                <div class="groupe-form">
+                    <label>Prénom</label>
+                    <input type="text" id="prenom" required placeholder="Votre prénom">
+                </div>
+                <div class="groupe-form">
+                    <label>Pays</label>
+                    <select id="pays" onchange="changerIndicatif()" required>
+                        <option value="">Sélectionnez le pays</option>
+                        <option value="CM" data-code="+237">Cameroun (+237)</option>
+                        <option value="CI" data-code="+225">Côte d'Ivoire (+225)</option>
+                        <option value="SN" data-code="+221">Sénégal (+221)</option>
+                        <option value="GA" data-code="+241">Gabon (+241)</option>
+                        <option value="FR" data-code="+33">France (+33)</option>
+                    </select>
+                </div>
+                <div class="groupe-form">
+                    <label>Votre Numéro de Téléphone</label>
+                    <input type="tel" id="telephone" required placeholder="Votre numéro">
+                </div>
+                <div class="groupe-form">
+                    <label>Nom du Compte Bénéficiaire</label>
+                    <input type="text" id="nomBeneficiaire" required placeholder="Nom du compte (Momo/Om)">
+                </div>
+                <div class="groupe-form">
+                    <label>Numéro de Téléphone du Bénéficiaire</label>
+                    <input type="tel" id="telBeneficiaire" required placeholder="Numéro qui reçoit les gains">
+                </div>
+
+                <div class="groupe-form">
+                    <label style="font-size:0.85rem; color:var(--gris); display:block; margin-bottom:5px;">Devise d'investissement</label>
+                    <div class="devise-container">
+                        <div id="btnUSD" class="devise-option active" onclick="selectionnerDevise('USD')">DOLLAR ($)</div>
+                        <div id="btnXAF" class="devise-option" onclick="selectionnerDevise('XAF')">FCFA</div>
+                    </div>
+                </div>
+
+                <div class="groupe-form">
+                    <label>Montant à Investir</label>
+                    <input type="number" id="montant" oninput="calculerProfit()" required placeholder="Entrez la somme">
+                    <div id="erreurMontant" class="erreur-msg"></div>
+                </div>
+
+                <div class="case-profit">
+                    <p>Votre Profit Estimé (Gain x9) :</p>
+                    <span id="profitAffichage">0</span> <span id="deviseProfit" style="color:var(--rose); font-weight:800;">$</span>
+                </div>
+
+                <button type="submit" class="btn btn-investir">Valider l'investissement</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FENÊTRE 2 : RÉCAPITULATIF FINALE -->
+    <div id="modalRecap" class="modal">
+        <div class="modal-contenu">
+            <span class="fermer-modal" onclick="fermerModal('modalRecap')">&times;</span>
+            <h2>Récapitulatif de votre Dossier</h2>
+            
+            <div id="contenuRecap"></div>
+
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #ffcbd7; text-align: center; line-height: 1.4;">
+                ⚠️ Cliquez ci-dessous pour envoyer vos informations à l'administrateur WhatsApp.
+            </p>
+
+            <button class="btn btn-whatsapp" onclick="envoyerWhatsApp()">
+                Envoyer par WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- FENÊTRE 3 : NOUS CONTACTER & ALGORITHMES -->
+    <div id="modalContact" class="modal">
+        <div class="modal-contenu">
+            <span class="fermer-modal" onclick="fermerModal('modalContact')">&times;</span>
+            <h2>À Propos de Notre Système</h2>
+            
+            <p style="font-size: 0.85rem; color: var(--gris); line-height: 1.4; margin-bottom: 15px;">
+                <strong>Chantel White Trade</strong> gère intelligemment des fonds d'actifs numériques via des infrastructures informatiques automatisées.
+            </p>
+
+            <div class="info-systeme">
+                <h4>🤖 Système Basique</h4>
+                <p>Vos fonds intègrent une réserve de liquidité globale. Notre algorithme effectue des arbitrages simples (acheter bas, revendre instantanément plus haut) sans aucun risque de perte de capital.</p>
+            </div>
+
+            <div class="info-systeme">
+                <h4>⚡ Système Pro (Algorithmes)</h4>
+                <p>Nos scripts exploitent le Trading de Haute Fréquence (HFT). En se connectant directement aux API des plus grands marchés mondiaux, ils exécutent des centaines d'ordres par seconde basés sur l'étude des volumes instantanés.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
