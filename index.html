@@ -32,21 +32,76 @@
         <span class="btn-term red"></span>
         <span class="btn-term yellow"></span>
         <span class="btn-term green"></span>
-        <div class="terminal-title">git@chantel-trade:~//dashboard/gold-feed</div>
+        <div class="terminal-title">git@chantel-trade:~//dashboard/mineral-feed</div>
     </div>
     <div class="terminal-body">
-        <p class="term-line"><span class="term-user">visitor@chantel-trade:~$</span> fetch --live-gold-assets</p>
-        <p class="term-status">[CONNECTÉ] Récupération du flux international XAU/USD...</p>
+        <p class="term-line"><span class="term-user">visitor@chantel-trade:~$</span> fetch --live-all-minerals-assets</p>
+        <p class="term-status">[CONNECTÉ] Synchronisation globale du flux boursier international...</p>
 
+        <!-- 🥇 FLUX OR -->
         <div class="zone-prix-or">
-            <span class="symbole-or">🏆 OR (Spot Ounce) :</span>
-            <span id="prixOrLive" class="prix-or">Chargement...</span>
-            <span class="devise-or">USD</span>
+            <div class="details-mineral">
+                <span class="symbole-or">🏆 OR (Spot Ounce - XAU)</span>
+                <span class="info-technique-or">Contrat à terme standardisé de 100 onces - Pureté 99.99%</span>
+            </div>
+            <div class="valeurs-conversions">
+                <div class="valeur-usd"><span id="prixOrLive">Chargement...</span> <span class="unite-devise">USD</span></div>
+                <div class="valeur-fcfa"><span id="prixOrFCFA">-- ---</span> <span class="unite-devise">FCFA</span></div>
+            </div>
+        </div>
+
+        <!-- 🥈 FLUX ARGENT -->
+        <div class="zone-prix-or" style="border-left-color: #e2e8f0; background-color: rgba(226, 232, 240, 0.05);">
+            <div class="details-mineral">
+                <span class="symbole-or" style="color: #e2e8f0;">🥈 ARGENT (Spot Ounce - XAG)</span>
+                <span class="info-technique-or">Contrat de 5 000 onces - Très forte volatilité industrielle</span>
+            </div>
+            <div class="valeurs-conversions">
+                <div class="valeur-usd"><span id="prixArgentLive">Chargement...</span> <span class="unite-devise">USD</span></div>
+                <div class="valeur-fcfa"><span id="prixArgentFCFA">-- ---</span> <span class="unite-devise">FCFA</span></div>
+            </div>
+        </div>
+
+        <!-- 🛡️ FLUX PLATINE -->
+        <div class="zone-prix-or" style="border-left-color: #a5f3fc; background-color: rgba(165, 243, 252, 0.05);">
+            <div class="details-mineral">
+                <span class="symbole-or" style="color: #a5f3fc;">🛡️ PLATINE (Spot Ounce - XPT)</span>
+                <span class="info-technique-or">Métal précieux rare - Principalement catalytique & joaillerie</span>
+            </div>
+            <div class="valeurs-conversions">
+                <div class="valeur-usd"><span id="prixPlatineLive">Chargement...</span> <span class="unite-devise">USD</span></div>
+                <div class="valeur-fcfa"><span id="prixPlatineFCFA">-- ---</span> <span class="unite-devise">FCFA</span></div>
+            </div>
+        </div>
+
+        <!-- ⚡ FLUX PALLADIUM -->
+        <div class="zone-prix-or" style="border-left-color: #fbd5c6; background-color: rgba(251, 213, 198, 0.05);">
+            <div class="details-mineral">
+                <span class="symbole-or" style="color: #fbd5c6;">⚡ PALLADIUM (Spot Ounce - XPD)</span>
+                <span class="info-technique-or">Rareté critique - Métal essentiel aux technologies vertes</span>
+            </div>
+            <div class="valeurs-conversions">
+                <div class="valeur-usd"><span id="prixPalladiumLive">Chargement...</span> <span class="unite-devise">USD</span></div>
+                <div class="valeur-fcfa"><span id="prixPalladiumFCFA">-- ---</span> <span class="unite-devise">FCFA</span></div>
+            </div>
+        </div>
+
+        <!-- 🏗️ FLUX CUIVRE -->
+        <div class="zone-prix-or" style="border-left-color: #b45309; background-color: rgba(180, 83, 9, 0.05);">
+            <div class="details-mineral">
+                <span class="symbole-or" style="color: #f59e0b;">🏗️ CUIVRE (High Grade Pound - HG)</span>
+                <span class="info-technique-or">Prix par Livre (Lb) - Baromètre de la croissance mondiale</span>
+            </div>
+            <div class="valeurs-conversions">
+                <div class="valeur-usd"><span id="prixCuivreLive">Chargement...</span> <span class="unite-devise">USD</span></div>
+                <div class="valeur-fcfa"><span id="prixCuivreFCFA">-- ---</span> <span class="unite-devise">FCFA</span></div>
+            </div>
         </div>
 
         <p class="term-footer-line">Dernière synchronisation serveur : <span id="heureStatut">--:--:--</span></p>
     </div>
 </div>
+
 
 
 <div class="section-temoignages">
