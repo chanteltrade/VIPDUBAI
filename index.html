@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Chantel White Trade | Plateforme d'Investissement</title>
+    <title>Chantel White Trade | Plateforme d'Investissement Algorithmique</title>
+    
+    <!-- Connexion ultra-rapide aux serveurs de polices boursières -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Fichier de style externe lié -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Styles d'animations et effets de lumière dynamiques (Rose, Noir, Blanc) -->
+    <style>
+        /* Animation fluide pour le bandeau boursier défilant */
+        @keyframes defilementBourse {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* Animation de pulsation du voyant vert "SERVEUR ALGO LIVE" */
+        @keyframes pulsationLive {
+            0% { transform: scale(0.9); opacity: 0.5; box-shadow: 0 0 4px #10b981; }
+            50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 12px #10b981; }
+            100% { transform: scale(0.9); opacity: 0.5; box-shadow: 0 0 4px #10b981; }
+        }
+
+        /* Animation de lueur pour les boutons importants (effet néon délicat) */
+        @keyframes lueurBouton {
+            0% { box-shadow: 0 4px 12px rgba(255, 71, 126, 0.3); }
+            50% { box-shadow: 0 4px 20px rgba(255, 71, 126, 0.6); }
+            100% { box-shadow: 0 4px 12px rgba(255, 71, 126, 0.3); }
+        }
+
+        /* Optimisation du défilement tactile sur les navigateurs mobiles */
+        html {
+            scroll-behavior: smooth;
+            background-color: #050505;
+        }
+
+        /* Blocage des zooms automatiques gênants sur iPhone lors des clics */
+        input, select {
+            font-size: 16px !important;
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- ÉCRAN D'ACCUEIL -->
