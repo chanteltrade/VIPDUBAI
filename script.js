@@ -187,7 +187,13 @@ function validerFormulaire(event) {
 }
 
 function envoyerWhatsApp() {
+    // Gestion propre du symbole de la devise
     const sym = dataClient.devise === 'USD' ? '$' : ' FCFA';
+    
+    // Numéro de l'administrateur (au format international, sans le signe +)
+    const numeroAdmin = "2376XXXXXXXX"; 
+
+    // Construction du message textuel
     let txt = `*INVESTISSEMENT SECURISE — CHANTEL WHITE TRADE*\n\n`;
     txt += `• *Client :* ${dataClient.nom} ${dataClient.prenom}\n`;
     txt += `• *Pays :* ${dataClient.pays}\n`;
@@ -197,5 +203,9 @@ function envoyerWhatsApp() {
     txt += `• *Fonds Engagés :* ${dataClient.montant.toLocaleString()}${sym}\n`;
     txt += `• *Marge :* + ${dataClient.profit.toLocaleString()}${sym}\n`;
 
-    window.open(`https://whatsapp.com{NUMERO_WHATSAPP_ADMIN}&text=${encodeURIComponent(txt)}`, '_blank');
+    // Utilisation de l'API standard de WhatsApp (wa.me) avec la bonne syntaxe URL
+    const url = `https://wa.me{+237641655717}?text=${encodeURIComponent(txt)}`;
+    
+    window.open(url, '_blank');
 }
+
